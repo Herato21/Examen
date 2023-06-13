@@ -1,0 +1,4 @@
+Jefe de sector - $50,000
+Gerente general - $20,000
+Gerente de tienda - $10,000
+empleado - $8,000
