@@ -1,0 +1,233 @@
+
+LAB08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (main)
+$ git log --oneline
+258b0d1 (HEAD -> main, origin/producción, origin/main, origin/HEAD, producción) Añadimos una branch con la produccion
+b686175 Initial commit
+
+LAB08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (main)
+$ git tag v1.0 -a "Version 1.0"
+fatal: Failed to resolve 'Version 1.0' as a valid ref.
+
+LAB08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (main)
+$ git tag -a v1.0 "Version 1.0"
+fatal: Failed to resolve 'Version 1.0' as a valid ref.
+
+LAB08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (main)
+$ git tag -a v1.0 -m "Version 1.0"
+
+LAB08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+LAB08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (main)
+$ git push
+Everything up-to-date
+
+LAB08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (main)
+$ git commit -M "Version 1.0 lista"
+error: unknown switch `M'
+usage: git commit [<options>] [--] <pathspec>...
+
+    -q, --quiet           suppress summary after successful commit
+    -v, --verbose         show diff in commit message template
+
+Commit message options
+    -F, --file <file>     read message from file
+    --author <author>     override author for commit
+    --date <date>         override date for commit
+    -m, --message <message>
+                          commit message
+    -c, --reedit-message <commit>
+                          reuse and edit message from specified commit
+    -C, --reuse-message <commit>
+                          reuse message from specified commit
+    --fixup [(amend|reword):]commit
+                          use autosquash formatted message to fixup or amend/reword specified commit
+    --squash <commit>     use autosquash formatted message to squash specified commit
+    --reset-author        the commit is authored by me now (used with -C/-c/--amend)
+    --trailer <trailer>   add custom trailer(s)
+    -s, --signoff         add a Signed-off-by trailer
+    -t, --template <file>
+                          use specified template file
+    -e, --edit            force edit of commit
+    --cleanup <mode>      how to strip spaces and #comments from message
+    --status              include status in commit message template
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+
+Commit contents options
+    -a, --all             commit all changed files
+    -i, --include         add specified files to index for commit
+    --interactive         interactively add files
+    -p, --patch           interactively add changes
+    -o, --only            commit only specified files
+    -n, --no-verify       bypass pre-commit and commit-msg hooks
+    --dry-run             show what would be committed
+    --short               show status concisely
+    --branch              show branch information
+    --ahead-behind        compute full ahead/behind values
+    --porcelain           machine-readable output
+    --long                show status in long format (default)
+    -z, --null            terminate entries with NUL
+    --amend               amend previous commit
+    --no-post-rewrite     bypass post-rewrite hook
+    -u, --untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+LAB08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (main)
+$ git commit -m "Version 1.0 lista"
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+LAB08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (main)
+$ git push
+Everything up-to-date
+
+LAB08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (main)
+$ ls
+ README.md   imagenproducto.png   materia_prima.txt  'producto _final.txt'
+
+LAB08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (main)
+$ git tag
+v1.0
+
+LAB08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (main)
+$ git checkout recurso_humano
+Switched to branch 'recurso_humano'
+Your branch is up to date with 'origin/recurso_humano'.
+
+LAB08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (recurso_humano)
+$ ls
+README.md  empleados.txt
+
+LAB08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (recurso_humano)
+$ nano empleados.txt
+
+LAB08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (recurso_humano)
+$ git diff
+diff --git a/empleados.txt b/empleados.txt
+index 086abdb..a9e79cd 100644
+--- a/empleados.txt
++++ b/empleados.txt
+@@ -1,5 +1,10 @@
+-Mario Hugo
+-Juan Carlos Bodoque
+-Zoar Nauvoo
+-Hector Enrique
+-Nadia Teresa
++1.- Mario Hugo
++2.- Juan Carlos Bodoque
++3.- Zoar Nauvoo
++4.- Hector Enrique
++5.- Nadia Teresa
++6.- Jose Juan
++7.- Roberto Zapiain
++8.- Diego Cruz
++9.- Alessandra Rivera
++10.- Ximena Machintoch
+
+LAB08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (recurso_humano)
+$ git add .
+
+LAB08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (recurso_humano)
+$ git commit -m "Se contrataron mas empleados"
+[recurso_humano 3c250b0] Se contrataron mas empleados
+ 1 file changed, 10 insertions(+), 5 deletions(-)
+
+LAB08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (recurso_humano)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 444 bytes | 40.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Herato21/Examen.git
+   6b49356..3c250b0  recurso_humano -> recurso_humano
+Merge made by the 'ort' strategy.
+ empleados.txt | 10 ++++++++++GW64 /c/git/examen (recurso_humano)
+ 1 file changed, 10 insertions(+)
+ create mode 100644 empleados.txt
+Your branch is up to date with 'origin/main'.
+LAB08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (main)
+$ B08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (main)
+$ git merge recurso_humano
+LAB08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (main)  0 [sig] bash 2099! sigp$ ket::process: Suppressing signal 18 to win32 process (pid 9556)
+                                                                  768150 [sig] bLAB08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (main)win32 process (pid 9556)
+$
+
+LAB08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (main)
+$ git branch
+* main
+  producción
+  recurso_humano
+  ventas
+
+LAB08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (main)
+$ git merge recurso_humano
+Already up to date.
+
+LAB08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (main)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 319 bytes | 319.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Herato21/Examen.git
+   258b0d1..aad60d3  main -> main
+
+LAB08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (main)
+$ git tag -a 1.1 -m "version 1.1"
+
+LAB08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (main)
+$ git push
+Everything up-to-date
+
+LAB08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (main)
+$ git add.
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+        add
+
+LAB08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (main)
+$ git add .
+
+LAB08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (main)
+$ git tag -a 1.1 -m "version 1.1"
+fatal: tag '1.1' already exists
+
+LAB08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (main)
+$ git push
+Everything up-to-date
+
+LAB08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (main)
+$ git commit -m se realizo el merge"
+> ^C
+
+LAB08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (main)
+$ git commit -m "Se realizo el merge"
+[main 4bd6718] Se realizo el merge
+ 1 file changed, 1 insertion(+)
+
+LAB08-PC19@DESKTOP-LFQVS7I MINGW64 /c/git/examen (main)
+$ git push --tags
+Enumerating objects: 2, done.
+Counting objects: 100% (2/2), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 303 bytes | 303.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+
